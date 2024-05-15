@@ -1,0 +1,9 @@
+<div>
+    <mat-dialog-content>
+        <p>{{data.question}}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions style="float: right;">
+        <button mat-button extended mat-dialog-close>{{data.buttonOne}}</button>
+        <button mat-button extended [mat-dialog-close]="true" cdkFocusInitial>{{data.buttonTwo}}</button>
+    </mat-dialog-actions>
+</div>

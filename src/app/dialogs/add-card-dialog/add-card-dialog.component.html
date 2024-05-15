@@ -1,0 +1,47 @@
+<div id="add-card-dialog-container">
+    <form>
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput required [(ngModel)]="firstName" name="firstName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput required [(ngModel)]="lastName" name="lastName">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Manufacturer</mat-label>
+            <mat-select required [(ngModel)]="manufacturer" name="manufacturer">
+                <mat-option value="Topps">Topps</mat-option>
+                <mat-option value="Fleer">Fleer</mat-option>
+                <mat-option value="Donruss">Donruss</mat-option>
+                <mat-option value="Upper Deck">Upper Deck</mat-option>
+                <mat-option value="Score">Score</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Sport</mat-label>
+            <mat-select required [(ngModel)]="sport" name="sport">
+                <mat-option value="Baseball">Baseball</mat-option>
+                <mat-option value="Basketball">Basketball</mat-option>
+                <mat-option value="Football">Football</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field  id="year-field">
+            <mat-label>Year</mat-label>
+            <input matInput required [(ngModel)]="year" name="year" maxlength="4" value="2000">
+        </mat-form-field>
+        <mat-form-field  color="accent" id="psa-value-field">
+            <mat-label>PSA Value</mat-label>
+            <input matInput required [(ngModel)]="psaValue" name="psaValue">
+        </mat-form-field>
+        <div>
+            <button type="submit" 
+                (click)="closeDialog()" 
+                mat-flat-button 
+                id="add-card-dialog-button" 
+                color="primary">
+                Add Card
+            </button>
+        </div>
+    </form>
+</div>

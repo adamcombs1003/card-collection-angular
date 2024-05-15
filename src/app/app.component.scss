@@ -1,0 +1,24 @@
+.app-container {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    display: block;
+}
+
+.app-bar-spacer {
+    width: 100%;
+}
+
+.app-title {
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+.mat-drawer {
+    min-width: 200px;
+    padding-top: 20px;
+}
+
+mat-list-item {
+    font-size: 18px;
+}

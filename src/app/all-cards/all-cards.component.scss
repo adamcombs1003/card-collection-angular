@@ -1,0 +1,30 @@
+.mat-column-remove {
+    margin: auto;
+    width: 10px;
+}
+
+.mat-column-psaValue {
+    border-right: 1px solid rgba(255, 255, 255, .12);
+}
+
+.mat-icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trash-icon {
+    cursor: pointer;
+}
+
+.add-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+#add-card-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
