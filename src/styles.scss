@@ -4,10 +4,12 @@
 
 @include mat.core();
 
-html, body, .mat-drawer-container { height: 100%; }
+html, body, .mat-drawer-container { 
+    height: 100%;
+    font-family: "Teachers", sans-serif;
+}
 body, .mat-drawer-containter { 
-    margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
 }
 
 $red-palette: (

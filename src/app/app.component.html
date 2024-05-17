@@ -1,18 +1,24 @@
 <div #appcontainer class="dark-theme app-container">
   <mat-drawer-container>
-    <mat-drawer #drawer mode="side" [opened]="true">
+    <mat-drawer #drawer mode="over" [opened]="false">
       <mat-nav-list role="list">
-        <mat-list-item>All Cards</mat-list-item>
+        <mat-list-item id="hamburger-menu-list-item">All Cards</mat-list-item>
       </mat-nav-list>
     </mat-drawer>
     <mat-drawer-content>
-      <mat-toolbar class="main-toolbar" color="accent">
-        <button mat-icon-button extended class="menu-icon" (click)="drawer.toggle()"
-          aria-label="Button with a menu icon">
+      <mat-toolbar id="main-toolbar" color="accent">
+        <button mat-icon-button id="hamburger-icon" (click)="drawer.toggle()" aria-label="Button with a menu icon">
           <mat-icon>menu</mat-icon>
         </button>
-        <span class="app-title">Card Collection</span>
-        <span class="app-bar-spacer"></span>
+        <span id="app-title">Combs Card Collection</span>
+        <span id="links">
+          <a id="psa-link" href="https://www.psacard.com/auctionprices">
+            <img src="../assets/images/psa.png" height="20px" />
+          </a>
+          <a id="ebay-link" href="https://www.ebay.com/b/Trading-Cards/">
+            <img src="../assets/images/ebay.png" height="20px" />
+          </a>
+        </span>
         <span>
           <button mat-icon-button extended class="drip-icon" aria-label="Theme icon" (click)="toggleTheme()">
             <mat-icon>water_drop</mat-icon>

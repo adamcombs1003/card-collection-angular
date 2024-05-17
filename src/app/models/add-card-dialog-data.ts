@@ -1,5 +1,5 @@
-import { CardRequest } from "./card-request";
+import { Card } from "./card";
 
 export interface AddCardDialogData {
-  addCardRequest: CardRequest;
+  card: Card;
 }

@@ -6,8 +6,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from "@angular/material/input";
 import { FormControl, FormGroup, FormGroupDirective, FormsModule, NgForm, ReactiveFormsModule, Validators } from "@angular/forms";
-import { CardRequest } from "../../models/card-request";
 import { ErrorStateMatcher } from "@angular/material/core";
+import { Card } from "../../models/card";
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class FormErrorStateMatcher implements ErrorStateMatcher {
@@ -32,7 +32,7 @@ export class FormErrorStateMatcher implements ErrorStateMatcher {
   ]
 })
 export class AddCardDialog {
-  addCardRequest: CardRequest;
+  addCardRequest: Card;
   firstName = "";
   lastName = "";
   year = "";
@@ -57,6 +57,7 @@ export class AddCardDialog {
 
   closeDialog() {
     this.addCardRequest = {
+      _id: "",
       firstName: this.firstName,
       lastName: this.lastName,
       year: this.year,

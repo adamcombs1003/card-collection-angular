@@ -1,3 +1,7 @@
+mat-list-item {
+    font-size: 18px;
+}
+
 .app-container {
     height: 100%;
     margin: 0;
@@ -5,20 +9,33 @@
     display: block;
 }
 
-.app-bar-spacer {
+.mat-drawer {
+    min-width: 100px;
+}
+
+#links {
+    margin-left: 50px;
+    margin-right: 50px;
     width: 100%;
 }
 
-.app-title {
-    font-size: 25px;
+#links img {
     margin-left: 20px;
 }
 
-.mat-drawer {
-    min-width: 200px;
-    padding-top: 20px;
+#app-title {
+    font-size: 16px;
 }
 
-mat-list-item {
-    font-size: 18px;
+#main-toolbar {
+    height: 50px;
+    padding: 0px;
+}
+
+#hamburger-icon {
+    margin-left: 0px;
+}
+
+#hamburger-menu-list-item {
+    font-size: 12px;
 }

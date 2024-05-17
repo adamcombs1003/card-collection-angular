@@ -1,5 +1,5 @@
-import { MatDialog, MatDialogModule, MAT_DIALOG_DATA, MatDialogActions, MatDialogContent, MatDialogRef } from '@angular/material/dialog';
-import { AfterViewInit, Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { CardsHttpService } from '../cards.service';
@@ -8,7 +8,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { CurrencyPipe } from '@angular/common';
 import { TwoButtonDialog } from '../dialogs/two-button-dialog/two-button-dialog.component';
 import { AddCardDialog } from '../dialogs/add-card-dialog/add-card-dialog.component';
-import { CardRequest } from '../models/card-request';
 import { Card } from '../models/card';
 
 @Component({
@@ -39,7 +38,8 @@ export class AllCardsComponent implements OnInit, AfterViewInit {
   ];
   removeId: string;
   choice: string;
-  addCardRequest: CardRequest;
+  addCardRequest: Card;
+  updateCardRequest: Card;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -50,7 +50,6 @@ export class AllCardsComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.getAllCards();
-    this.showAddCardDialog();
   }
 
   ngAfterViewInit() {
@@ -86,8 +85,8 @@ export class AllCardsComponent implements OnInit, AfterViewInit {
 
   showAddCardDialog() {
     const dialogRef = this.dialog.open(AddCardDialog, {
-      data: { 
-        addCardRequest: new CardRequest()
+      data: {
+        addCardRequest: new Card()
       }
     });
 

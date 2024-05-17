@@ -1,14 +1,15 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, catchError, throwError } from "rxjs";
-import { CardRequest } from "./models/card-request";
 import { Card } from "./models/card";
 
 @Injectable({
     providedIn: 'root'
 })
 export class CardsHttpService {
-    apiUrl = 'http://localhost:8080';
+    localApiUrl = 'http://localhost:8080';
+    elasticBeanstalkUrl = "http://cccollection.us-east-1.elasticbeanstalk.com"
+    apiUrl = this.elasticBeanstalkUrl;
 
     constructor(private http: HttpClient) { }
 
@@ -19,14 +20,14 @@ export class CardsHttpService {
             );
     }
 
-    addCard(cardRequest: CardRequest): Observable<any> {
+    addCard(cardRequest: Card): Observable<any> {
         return this.http.post(this.apiUrl + '/cards/add', cardRequest)
             .pipe(
                 catchError(this.handleError)
             );
     }
 
-    updateCard(cardRequest: CardRequest): Observable<any> {
+    updateCard(cardRequest: Card): Observable<any> {
         return this.http.put(this.apiUrl + '/cards/update', cardRequest)
             .pipe(
                 catchError(this.handleError)
