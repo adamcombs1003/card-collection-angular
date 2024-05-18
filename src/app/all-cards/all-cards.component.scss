@@ -1,30 +1,41 @@
+.component-container {
+  margin: 25px;
+}
+
 .mat-column-remove {
-    margin: auto;
-    width: 10px;
+  margin: auto;
+  width: 10px;
 }
 
 .mat-column-psaValue {
-    border-right: 1px solid rgba(255, 255, 255, .12);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .mat-icon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .trash-icon {
-    cursor: pointer;
-}
-
-.add-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+  cursor: pointer;
 }
 
 #add-card-button {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  float: right;
+  margin-right: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 40px;
+}
+
+#add-card-icon {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#all-cards-table {
+  width: 100%;
+  min-width: 600px;
 }

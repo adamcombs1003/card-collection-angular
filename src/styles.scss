@@ -4,9 +4,12 @@
 
 @include mat.core();
 
+* {
+    font-family: "Teachers", sans-serif;
+}
+
 html, body, .mat-drawer-container { 
     height: 100%;
-    font-family: "Teachers", sans-serif;
 }
 body, .mat-drawer-containter { 
     margin: 0;

@@ -32,7 +32,7 @@ export class FormErrorStateMatcher implements ErrorStateMatcher {
   ]
 })
 export class AddCardDialog {
-  addCardRequest: Card;
+  addCardRequest: Card = new Card();
   firstName = "";
   lastName = "";
   year = "";

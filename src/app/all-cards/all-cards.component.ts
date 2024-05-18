@@ -1,4 +1,4 @@
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogModule } from '@angular/material/dialog';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
@@ -9,6 +9,11 @@ import { CurrencyPipe } from '@angular/common';
 import { TwoButtonDialog } from '../dialogs/two-button-dialog/two-button-dialog.component';
 import { AddCardDialog } from '../dialogs/add-card-dialog/add-card-dialog.component';
 import { Card } from '../models/card';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { DialogConfig } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'all-cards',
@@ -19,7 +24,11 @@ import { Card } from '../models/card';
     MatIconModule,
     MatDialogModule,
     MatButtonModule,
-    CurrencyPipe
+    CurrencyPipe,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    FormsModule
   ],
   templateUrl: './all-cards.component.html',
   styleUrl: './all-cards.component.scss'
@@ -40,6 +49,12 @@ export class AllCardsComponent implements OnInit, AfterViewInit {
   choice: string;
   addCardRequest: Card;
   updateCardRequest: Card;
+  firstName = "";
+  lastName = "";
+  year = "";
+  sport = "";
+  manufacturer = "";
+  psaValue = 0;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -84,6 +99,8 @@ export class AllCardsComponent implements OnInit, AfterViewInit {
   }
 
   showAddCardDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.position = { bottom: '50px' }
     const dialogRef = this.dialog.open(AddCardDialog, {
       data: {
         addCardRequest: new Card()
@@ -96,6 +113,24 @@ export class AllCardsComponent implements OnInit, AfterViewInit {
         error: () => this.handleAddCardError()
       });
     });
+  }
+
+  addCard() {
+    this.addCardRequest = {
+      _id: "",
+      firstName: this.firstName,
+      lastName: this.lastName,
+      year: this.year,
+      sport: this.sport,
+      manufacturer: this.manufacturer,
+      psaValue: this.psaValue
+    }
+
+    this.cardsHttpService.addCard(this.addCardRequest).subscribe({
+      complete: () => this.getAllCards(),
+      error: () => this.handleAddCardError()
+    });
+
   }
 
   handleAddCardError(): void {
