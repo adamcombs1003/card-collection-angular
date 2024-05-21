@@ -8,7 +8,7 @@ import { Card } from "./models/card";
 })
 export class CardsHttpService {
     localApiUrl = 'http://localhost:8080';
-    elasticBeanstalkUrl = "http://cccollection.us-east-1.elasticbeanstalk.com"
+    elasticBeanstalkUrl = "http://combs-card-collection.us-east-1.elasticbeanstalk.com"
     apiUrl = this.elasticBeanstalkUrl;
 
     constructor(private http: HttpClient) { }

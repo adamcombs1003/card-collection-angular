@@ -11,11 +11,11 @@
         <mat-form-field>
             <mat-label>Manufacturer</mat-label>
             <mat-select required [(ngModel)]="manufacturer" name="manufacturer">
-                <mat-option value="Topps">Topps</mat-option>
-                <mat-option value="Fleer">Fleer</mat-option>
-                <mat-option value="Donruss">Donruss</mat-option>
-                <mat-option value="Upper Deck">Upper Deck</mat-option>
-                <mat-option value="Score">Score</mat-option>
+              @for (manufacturer of manufacturers; track manufacturer){
+                <mat-option value="{{manufacturer}}">{{manufacturer}}</mat-option>
+              } @empty {
+                Empty card list.
+              }
             </mat-select>
         </mat-form-field>
         <mat-form-field>
@@ -35,10 +35,10 @@
             <input matInput required [(ngModel)]="psaValue" name="psaValue">
         </mat-form-field>
         <div>
-            <button type="submit" 
-                (click)="closeDialog()" 
-                mat-flat-button 
-                id="add-card-dialog-button" 
+            <button type="submit"
+                (click)="closeDialog()"
+                mat-flat-button
+                id="add-card-dialog-button"
                 color="primary">
                 Add Card
             </button>

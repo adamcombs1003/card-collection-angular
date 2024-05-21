@@ -24,8 +24,8 @@
       </ng-container>
 
       <ng-container matColumnDef="psaValue">
-        <th mat-header-cell *matHeaderCellDef>PSA Value</th>
-        <td mat-cell *matCellDef="let card">{{ card.psaValue | currency }}</td>
+        <th id="psa-value" mat-header-cell *matHeaderCellDef>PSA Value (Grade: 10)</th>
+        <td id="psa-value" mat-cell *matCellDef="let card">{{ card.psaValue | currency }}</td>
       </ng-container>
 
       <ng-container matColumnDef="remove">

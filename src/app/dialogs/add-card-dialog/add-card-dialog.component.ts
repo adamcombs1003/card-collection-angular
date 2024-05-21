@@ -39,15 +39,24 @@ export class AddCardDialog {
   sport = "";
   manufacturer = "";
   psaValue = 0;
-
+  manufacturers = [
+    "Topps",
+    "Donruss",
+    "Leaf",
+    "Fleer",
+    "Upper Deck",
+    "Score",
+    "Skybox",
+    "Ultra"
+  ];
 
   addCardForm = new FormGroup({
     firstNameFormControl: new FormControl('', [Validators.required]),
     lastNameFormControl: new FormControl('', [Validators.required]),
     yearFormControl: new FormControl('', [Validators.required, Validators.minLength(4)]),
     psaValueFormControl: new FormControl('', [Validators.required, Validators.pattern("^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?$")])
-  }); 
-  
+  });
+
   matcher = new FormErrorStateMatcher();
 
   constructor(
@@ -66,7 +75,7 @@ export class AddCardDialog {
       psaValue: this.psaValue
     }
     console.log(this.addCardRequest);
-    
+
     this.dialogRef.close(this.addCardRequest);
   }
 
