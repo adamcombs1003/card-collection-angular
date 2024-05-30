@@ -53,6 +53,7 @@ export class AllCardsComponent implements OnInit, AfterViewInit {
   year = "";
   sport = "";
   manufacturer = "";
+  subSet = "";
   psaValue = 0;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -122,6 +123,7 @@ export class AllCardsComponent implements OnInit, AfterViewInit {
       year: this.year,
       sport: this.sport,
       manufacturer: this.manufacturer,
+      subSet: this.subSet,
       psaValue: this.psaValue
     }
 

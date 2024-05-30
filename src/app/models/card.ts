@@ -5,5 +5,6 @@ export class Card {
     year: string;
     sport: string;
     manufacturer: string;
+    subSet: string;
     psaValue: number;
 }

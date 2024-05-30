@@ -1,47 +1,59 @@
 <div id="add-card-dialog-container">
-    <form>
-        <mat-form-field>
-            <mat-label>First Name</mat-label>
-            <input matInput required [(ngModel)]="firstName" name="firstName">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Last Name</mat-label>
-            <input matInput required [(ngModel)]="lastName" name="lastName">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Manufacturer</mat-label>
-            <mat-select required [(ngModel)]="manufacturer" name="manufacturer">
-              @for (manufacturer of manufacturers; track manufacturer){
-                <mat-option value="{{manufacturer}}">{{manufacturer}}</mat-option>
-              } @empty {
-                Empty card list.
-              }
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Sport</mat-label>
-            <mat-select required [(ngModel)]="sport" name="sport">
-                <mat-option value="Baseball">Baseball</mat-option>
-                <mat-option value="Basketball">Basketball</mat-option>
-                <mat-option value="Football">Football</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field  id="year-field">
-            <mat-label>Year</mat-label>
-            <input matInput required [(ngModel)]="year" name="year" maxlength="4" value="2000">
-        </mat-form-field>
-        <mat-form-field  color="accent" id="psa-value-field">
-            <mat-label>PSA Value</mat-label>
-            <input matInput required [(ngModel)]="psaValue" name="psaValue">
-        </mat-form-field>
-        <div>
-            <button type="submit"
-                (click)="closeDialog()"
-                mat-flat-button
-                id="add-card-dialog-button"
-                color="primary">
-                Add Card
-            </button>
-        </div>
-    </form>
+  <form>
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input matInput required [(ngModel)]="firstName" name="firstName" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input matInput required [(ngModel)]="lastName" name="lastName" />
+    </mat-form-field>
+    <mat-form-field id="year-field">
+      <mat-label>Year</mat-label>
+      <input
+        matInput
+        required
+        [(ngModel)]="year"
+        name="year"
+        maxlength="4"
+        value="2000"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Sport</mat-label>
+      <mat-select required [(ngModel)]="sport" name="sport">
+        <mat-option value="Baseball">Baseball</mat-option>
+        <mat-option value="Basketball">Basketball</mat-option>
+        <mat-option value="Football">Football</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Manufacturer</mat-label>
+      <mat-select required [(ngModel)]="manufacturer" name="manufacturer">
+        @for (manufacturer of manufacturers; track manufacturer){
+          <mat-option value="{{ manufacturer }}">{{ manufacturer }}</mat-option>
+        } @empty { Empty Card Manufacturer List }
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Sub Set</mat-label>
+      <mat-select required [(ngModel)]="subSet" name="subset">
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field color="accent" id="psa-value-field">
+      <mat-label>PSA Value</mat-label>
+      <input matInput required [(ngModel)]="psaValue" name="psaValue" />
+    </mat-form-field>
+    <div>
+      <button
+        type="submit"
+        (click)="closeDialog()"
+        mat-flat-button
+        id="add-card-dialog-button"
+        color="primary"
+      >
+        Add Card
+      </button>
+    </div>
+  </form>
 </div>

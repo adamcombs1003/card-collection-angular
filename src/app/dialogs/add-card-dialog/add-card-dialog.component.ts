@@ -38,6 +38,7 @@ export class AddCardDialog {
   year = "";
   sport = "";
   manufacturer = "";
+  subSet = "";
   psaValue = 0;
   manufacturers = [
     "Topps",
@@ -72,6 +73,7 @@ export class AddCardDialog {
       year: this.year,
       sport: this.sport,
       manufacturer: this.manufacturer,
+      subSet: this.subSet,
       psaValue: this.psaValue
     }
     console.log(this.addCardRequest);
