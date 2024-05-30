@@ -30,4 +30,4 @@ jobs:
         aws-region: us-east-1
     - name: Deploy static site to S3 bucket
       if: success()
-      run: aws s3 sync ./dist/template/ s3://combs-card-collection-customresources-s3bucketroot-wkproknuxjoi  --delete
+      run: aws s3 sync ./dist/combs-cards/ s3://combs-card-collection-customresources-s3bucketroot-wkproknuxjoi  --delete
