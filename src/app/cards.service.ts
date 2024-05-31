@@ -3,13 +3,6 @@ import { Injectable } from "@angular/core";
 import { Observable, catchError, throwError } from "rxjs";
 import { Card } from "./models/card";
 
-const httpOptions = {
-    headers: new HttpHeaders({
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE'
-    })
-};
-
 @Injectable({
     providedIn: 'root'
 })
@@ -20,28 +13,28 @@ export class CardsHttpService {
     constructor(private http: HttpClient) { }
 
     getAllCards() {
-        return this.http.get<Card[]>(this.apiUrl + '/cards', httpOptions)
+        return this.http.get<Card[]>(this.apiUrl + '/cards')
             .pipe(
                 catchError(this.handleError)
             );
     }
 
     addCard(cardRequest: Card): Observable<any> {
-        return this.http.post(this.apiUrl + '/cards/add', cardRequest, httpOptions)
+        return this.http.post(this.apiUrl + '/cards/add', cardRequest)
             .pipe(
                 catchError(this.handleError)
             );
     }
 
     updateCard(cardRequest: Card): Observable<any> {
-        return this.http.put(this.apiUrl + '/cards/update', cardRequest, httpOptions)
+        return this.http.put(this.apiUrl + '/cards/update', cardRequest)
             .pipe(
                 catchError(this.handleError)
             );
     }
 
     deleteCard(cardId: string): Observable<any> {
-        return this.http.delete(this.apiUrl + '/cards/delete/' + cardId, httpOptions)
+        return this.http.delete(this.apiUrl + '/cards/delete/' + cardId)
             .pipe(
                 catchError(this.handleError)
             );
