@@ -5,7 +5,8 @@ import { Card } from "./models/card";
 
 const httpOptions = {
     headers: new HttpHeaders({
-        'Access-Control-Allow-Origin':'*'
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE'
     })
 };
 
@@ -40,7 +41,7 @@ export class CardsHttpService {
     }
 
     deleteCard(cardId: string): Observable<any> {
-        return this.http.delete(this.apiUrl + '/cards/delete' + cardId, httpOptions)
+        return this.http.delete(this.apiUrl + '/cards/delete/' + cardId, httpOptions)
             .pipe(
                 catchError(this.handleError)
             );
