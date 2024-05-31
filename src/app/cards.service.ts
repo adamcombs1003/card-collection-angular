@@ -40,7 +40,7 @@ export class CardsHttpService {
     }
 
     deleteCard(cardId: string): Observable<any> {
-        return this.http.delete(this.apiUrl + '/cards/delete/' + cardId, httpOptions)
+        return this.http.delete(this.apiUrl + '/cards/delete' + cardId, httpOptions)
             .pipe(
                 catchError(this.handleError)
             );
