@@ -67,7 +67,7 @@ export class AddCardDialog {
 
   closeDialog() {
     this.addCardRequest = {
-      _id: "",
+      _id: Math.floor(Math.random() * (1000000)).toString(),
       firstName: this.firstName,
       lastName: this.lastName,
       year: this.year,
