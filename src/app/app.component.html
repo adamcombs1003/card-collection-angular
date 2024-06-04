@@ -1,8 +1,13 @@
 <div #appcontainer class="dark-theme app-container">
   <mat-drawer-container>
-    <mat-drawer #drawer mode="over" [opened]="false">
+    <mat-drawer #drawer mode="push" [opened]="false">
       <mat-nav-list role="list">
-        <mat-list-item id="hamburger-menu-list-item">All Cards</mat-list-item>
+        <a mat-list-item 
+          id="hamburger-menu-list-item"
+          routerLinkActive="activebutton"
+          routerLink="/all-cards">
+            All Cards
+        </a>
       </mat-nav-list>
     </mat-drawer>
     <mat-drawer-content>
@@ -25,7 +30,7 @@
           </button>
         </span>
       </mat-toolbar>
-      <router-outlet />
+      <router-outlet></router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>
 </div>

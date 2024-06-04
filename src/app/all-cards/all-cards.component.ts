@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'all-cards',
@@ -27,7 +28,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    RouterLinkActive
   ],
   templateUrl: './all-cards.component.html',
   styleUrl: './all-cards.component.scss'
@@ -41,6 +43,7 @@ export class AllCardsComponent implements OnInit, AfterViewInit {
     'sport',
     'year',
     'manufacturer',
+    'subSet',
     'psaValue',
     'remove'
   ];

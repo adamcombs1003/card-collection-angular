@@ -7,9 +7,9 @@ import { Card } from "./models/card";
     providedIn: 'root'
 })
 export class CardsHttpService {
-    elasticBeanstalkUrl = "https://cardsapi.hoosier-dev.com";
+    azureUrl = "https://cardsmongodb-1717465918038.azurewebsites.net";
     localhostUrl = "http://localhost:8080"
-    apiUrl = this.localhostUrl;
+    apiUrl = this.azureUrl;
 
     constructor(private http: HttpClient) { }
 
